@@ -4,7 +4,7 @@
 			<div class="wrap">
 				<h1 class="title">Playstation 5 skins</h1>
 				<div class="product_list">
-					<product v-for="(item,index) in ps5_skins_items" :item="item" :key="index"></product>
+					<ProductItem v-for="(item,index) in ps5_skins_items" :item="item" :key="index"></ProductItem>
 				</div>
 			</div>
 		</main>
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+    import ProductItem from "@/components/ProductItem";
+
 	export default {
 		data() {
 			return {

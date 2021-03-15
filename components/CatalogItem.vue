@@ -1,5 +1,5 @@
 <template>
-	<a class="catalog_item" :href="item.url" title="">
+	<a class="catalog_item" :href="item.url" :title="linkTitle">
 		<div class="catalog_item_title">{{ item.title }}<span>{{ item.text }}</span></div>
 		<div class="image catalog_item_image">
 			<img :src="item.image" alt="">
@@ -9,12 +9,18 @@
 
 <script>
 	export default {
+	    name: 'CatalogItem',
 		props: {
 			item: {
 				type: Object,
 				default: {}
 			}
-		}
+		},
+		computed: {
+	        linkTitle() {
+	            return `${this.item.title} ${this.item.text} catalog`
+            }
+        }
 	}
 </script>
 

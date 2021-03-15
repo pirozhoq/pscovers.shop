@@ -4,7 +4,7 @@
 			<div class="wrap">
 				<h1 class="title">Playstation 5</h1>
 				<div class="catalog">
-					<catalog v-for="(item,index) in catalog_items" :item="item" :key="index"></catalog>
+					<CatalogItem v-for="(item,index) in catalog_items" :item="item" :key="index"></CatalogItem>
 				</div>
 			</div>
 		</main>
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-	import { Catalog } from '~/components/catalog';
+	import CatalogItem from '@/components/CatalogItem';
 
 	export default {
 		components: {
-			Catalog
+            CatalogItem
 		},
 		data() {
 			return {
@@ -24,19 +24,19 @@
 					{
 						title: 'Наклейки',
 						text: '',
-						image: require('~/assets/img/ps5_skins.png'),
+						image: require('@/static/image/ps5_skins.png'),
 						url: '/ps5/skins'
 					},
 					{
 						title: 'Аксессуары',
 						text: '',
-						image: require('~/assets/img/ps5_accessories.png'),
+						image: require('@/static/image/ps5_accessories.png'),
 						url: '/ps5/accessories'
 					},
 					{
 						title: 'Игры',
 						text: '',
-						image: require('~/assets/img/ps5_games.png'),
+						image: require('@/static/image/ps5_games.png'),
 						url: '/ps5/games'
 					}
 				]

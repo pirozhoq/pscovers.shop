@@ -5,7 +5,7 @@
 				<swiper class="swiper" :options="sliderOption">
 					<swiper-slide>
 						<a class="slider_item" href="#" title="">
-							<img src="~/assets/slider/slide1.jpg" alt="">
+							<img :src="require('@/static/slider/slide1.jpg')" alt="">
 						</a>
 					</swiper-slide>
 					<div class="slider_nav" slot="pagination"></div>
@@ -14,51 +14,51 @@
 			<div class="new">
 				<div class="new_item">
 					<p class="new_item_title">
-						<a href="/ps5" title="">Playstation 5<span></span></a>
+						<a href="/ps5" title="Playstaton 5 catalog">Playstation 5<span></span></a>
 					</p>
 					<ul class="new_item_list">
-						<li><a href="/ps5/skins" title="Наклейки на PS5">Наклейки</a></li>
-						<li><a href="/ps5/accessories" title="Аксессуары для PS5">Аксессуары</a></li>
-						<li><a href="/ps5/games" title="Игры на PS5">Игры</a></li>
+						<li><a href="/ps5/skins" title="Playstation 5 skins">Skins</a></li>
+						<li><a href="/ps5/accessories" title="Playstation 5 accessories">Accessories</a></li>
+						<li><a href="/ps5/games" title="Playstation 5 games">Games</a></li>
 					</ul>
 					<div class="new_item_image">
-						<img src="~/assets/img/ps5.png" alt="">
+						<img :src="require('@/static/image/ps5.png')" alt="">
 					</div>
 					<div class="new_item_bg"></div>
 				</div>
 				<div class="new_item">
 					<p class="new_item_title">
-						<a href="/ps5de" title="">Playstation 5<span>digital edition</span></a>
+						<a href="/ps5de" title="Playstaton 5 digital edition catalog">Playstation 5<span>digital edition</span></a>
 					</p>
 					<ul class="new_item_list">
-						<li><a href="/ps5de/skins" title="">Наклейки</a></li>
-						<li><a href="/ps5de/accessories" title="">Аксессуары</a></li>
-						<li><a href="/ps5de/games" title="">Игры</a></li>
+                        <li><a href="/ps5de/skins" title="Playstation 5 digital edition skins">Skins</a></li>
+                        <li><a href="/ps5de/accessories" title="Playstation 5 digital edition accessories">Accessories</a></li>
+                        <li><a href="/ps5de/games" title="Playstation 5 digital edition games">Games</a></li>
 					</ul>
 					<div class="new_item_image">
-						<img src="~/assets/img/ps5_de.png" alt="">
+						<img :src="require('@/static/image/ps5_de.png')" alt="">
 					</div>
 					<div class="new_item_bg"></div>
 				</div>
 			</div>
 			<div class="catalog">
-				<catalog v-for="(item,index) in catalog_items" :item="item" :key="index"></catalog>
+				<CatalogItem v-for="(item,index) in catalog_items" :item="item" :key="index"></CatalogItem>
 			</div>
 			<div class="skin">
-				<p class="title">Наклейки на PS5</p>
+				<p class="title">Skins for PS5</p>
 				<swiper class="swiper" :options="swiperOption">
 					<swiper-slide v-for="(item,index) in product_items" :key="index">
-<!--						<product class="swiper_product_item" :item="item"></product>-->
+<!--						<ProductItem class="swiper_product_item" :item="item"></ProductItem>-->
 					</swiper-slide>
 					<div class="swiper_pagination" slot="pagination"></div>
 				</swiper>
 			</div>
 			<div class="gear">
-				<p class="title">Аксессуары для PS5</p>
+				<p class="title">Accessories for PS5</p>
 				<div class="owl-carousel"></div>
 			</div>
 			<div class="game">
-				<p class="title">Игры для PS5</p>
+				<p class="title">PS5 Games</p>
 				<div class="owl-carousel"></div>
 			</div>
 		</div>
@@ -67,15 +67,15 @@
 
 <script>
 	import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-	import { Product } from '~/components/product';
-	import { Catalog } from '~/components/catalog';
+	import ProductItem from '@/components/ProductItem';
+	import CatalogItem from '@/components/CatalogItem';
 
 	export default {
 		components: {
 			Swiper,
 			SwiperSlide,
-			Product,
-			Catalog
+            ProductItem,
+            CatalogItem
 		},
 		data() {
 			return {
@@ -104,7 +104,7 @@
 				product_items: [
 					{
 						name: 'Виниловая наклейка на PS5, Marvel, Капитан Америка',
-						image: [{ url: require('~/assets/img/ps5_games.png') }],
+						image: [{ url: require('@/static/image/ps5_games.png') }],
 						price: '39',
 						link: '#'
 					}
@@ -113,19 +113,19 @@
 					{
 						title: 'Playstation 4',
 						text: '',
-						image: require('~/assets/img/ps4.jpg'),
+						image: require('@/static/image/ps4.jpg'),
 						url: '/ps4'
 					},
 					{
 						title: 'Playstation 4',
 						text: 'pro',
-						image: require('~/assets/img/ps4_pro.jpg'),
+						image: require('@/static/image/ps4_pro.jpg'),
 						url: '/ps4pro'
 					},
 					{
 						title: 'Playstation 4',
 						text: 'slim',
-						image: require('~/assets/img/ps4_slim.jpg'),
+						image: require('@/static/image/ps4_slim.jpg'),
 						url: '/ps4slim'
 					}
 				]

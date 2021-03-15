@@ -3,7 +3,7 @@
 		<a class="image product_image" :href="item.link" target="_blank">
 			<img :src="item.image.url" alt="">
 			<div class="product_image_zoom">
-				<img src="~/assets/img/expand.svg" alt="">
+				<img :src="require('@/assets/img/expand.svg')" alt="">
 			</div>
 		</a>
 		<p class="product_name">
@@ -15,8 +15,9 @@
 
 <script>
 	export default {
+	    name: 'ProductItem',
 		props: {
-			item: {
+            item: {
 				type: Object,
 				default: {}
 			}
@@ -26,7 +27,7 @@
 
 <style>
 	.product {
-		width: calc((100% - 60px) / 4);
+		width: calc((100% - 30px) / 2);
 		margin: 0 7.5px 15px;
 		padding: 12px 15px;
 		border-radius: 10px;
@@ -35,7 +36,7 @@
 	}
 	.product_image {
 		position: relative;
-		height: 200px;
+		height: 130px;
 		margin: 0 0 15px;
 	}
 	.product_image_zoom {
@@ -68,4 +69,13 @@
 		font-size: 14px;
 		line-height: 16px;
 	}
+
+    @media (min-width: 576px) {
+        .product {
+            width: calc((100% - 60px) / 4);
+        }
+        .product_image {
+            height: 200px;
+        }
+    }
 </style>
