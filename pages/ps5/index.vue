@@ -22,19 +22,19 @@
 			return {
 				catalog_items: [
 					{
-						title: 'Наклейки',
+						title: 'Skins',
 						text: '',
 						image: require('@/static/image/ps5_skins.png'),
 						url: '/ps5/skins'
 					},
 					{
-						title: 'Аксессуары',
+						title: 'Accessories',
 						text: '',
 						image: require('@/static/image/ps5_accessories.png'),
 						url: '/ps5/accessories'
 					},
 					{
-						title: 'Игры',
+						title: 'Games',
 						text: '',
 						image: require('@/static/image/ps5_games.png'),
 						url: '/ps5/games'

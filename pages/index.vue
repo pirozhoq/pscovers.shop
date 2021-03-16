@@ -159,8 +159,8 @@
 	.new_item {
 		position: relative;
 		display: block;
-		width: calc((100% - 30px) / 2);
-		height: 200px;
+		width: 100%;
+		height: 180px;
 		margin: 0 7.5px 15px;
 		padding: 15px 20px;
 		border-radius: 10px;
@@ -209,7 +209,7 @@
 		right: 20px;
 		z-index: 2;
 		width: auto;
-		height: 180px;
+		height: 160px;
 	}
 	.new_item_image img {
 		display: block;
@@ -255,4 +255,14 @@
 		width: 100%;
 		margin: 0;
 	}
+
+    @media (min-width: 768px) {
+        .new_item {
+            width: calc((100% - 30px) / 2);
+            height: 200px;
+        }
+        .new_item_image {
+            height: 180px;
+        }
+    }
 </style>

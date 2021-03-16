@@ -35,7 +35,8 @@
     }
     .menu__list {
         margin: 0;
-        padding: 30px;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
         list-style: none;
         background: #fff;
     }

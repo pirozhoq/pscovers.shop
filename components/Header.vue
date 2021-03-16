@@ -1,6 +1,6 @@
 <template>
-    <header>
-        <div class="header">
+    <div class="head">
+        <header class="header">
             <div class="wrap header__wrap">
                 <button :class="['header__button', {'header__button_active': isMenuActive}]" @click="menuShow" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,10 +22,10 @@
                     </svg>
                 </button>
             </div>
-        </div>
+        </header>
         <Menu :isActive="isMenuActive"/>
         <Search :isActive="isSearchActive"/>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -64,10 +64,14 @@
 </script>
 
 <style>
+    .head {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
 	.header {
-		position: sticky;
-		top: 0;
-		z-index: 10;
+        position: relative;
+        z-index: 10;
         padding: 5px 0;
         background: #fff;
         box-shadow: 0 0 5px 0 #ccc;
@@ -113,7 +117,7 @@
 		justify-content: center;
 		align-items: center;
 		font-family: 'Play';
-		font-size: 36px;
+		font-size: 26px;
 		font-weight: 700;
 		text-align: center;
 		text-decoration: none;
@@ -121,11 +125,21 @@
 		color: #000000;
 	}
 	.logo img {
-		height: 50px;
-		margin: 0 10px 0 0;
+		height: 36px;
+		margin: 0 5px 0 0;
 	}
 	.logo span {
-		margin: 0 0 0 5px;
 		color: #0070d1;
+        margin: 0 0 0 5px;
 	}
+
+    @media (min-width: 576px) {
+        .logo {
+            font-size: 36px;
+        }
+        .logo img {
+            height: 50px;
+            margin: 0 10px 0 0;
+        }
+    }
 </style>
