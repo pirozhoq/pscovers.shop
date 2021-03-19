@@ -1,14 +1,16 @@
 <template>
     <div class="search" :class="{ search_active: isActive }">
-        <div class="wrap">
-            <form class="search__form">
-                <input type="search" placeholder="Search skin, accessory, game" required="">
-                <button type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
-            </form>
+        <div class="search__content">
+            <div class="wrap">
+                <form class="search__form">
+                    <input type="search" ref="searchInput" placeholder="Search skin, accessory, game" required="">
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </template>
@@ -18,6 +20,15 @@
         name: 'Search',
         props: {
             isActive: Boolean
+        },
+        watch: {
+            isActive(value) {
+                if (value) {
+                    setTimeout(() => {
+                        this.$refs.searchInput.focus()
+                    }, 100)
+                }
+            }
         }
     }
 </script>
@@ -34,12 +45,13 @@
         padding: 60px 0 0;
         background: rgba(0,0,0, .4);
     }
+    .search__content {
+        padding: 20px 0;
+        background: #fff;
+    }
     .search__form {
         position: relative;
         margin: 0;
-        padding: 20px;
-        border-radius: 0 0 10px 10px;
-        background: #fff;
     }
     .search__form input {
         display: block;
@@ -47,13 +59,13 @@
         height: 50px;
         padding: 0 50px 0 15px;
         border-radius: 5px;
+        background: #fff;
         box-shadow: inset 0 0 5px 0 #ccc;
-        appearance: textfield;
     }
     .search__form button {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 0;
+        right: 0;
         z-index: 2;
         display: flex;
         justify-content: center;

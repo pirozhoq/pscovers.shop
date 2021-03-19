@@ -72,7 +72,7 @@
 	.header {
         position: relative;
         z-index: 10;
-        padding: 5px 0;
+        padding: 12px 0;
         background: #fff;
         box-shadow: 0 0 5px 0 #ccc;
 	}
@@ -81,13 +81,12 @@
         justify-content: space-between;
         align-items: center;
     }
-
 	.header__button {
 		display: flex;
         justify-content: center;
         align-items: center;
-		width: 50px;
-		height: 50px;
+		width: 30px;
+		height: 30px;
 		padding: 0;
 		border: none;
         border-radius: 5px;
@@ -97,10 +96,6 @@
 	}
     .header__button:hover {
         background: #fafafa;
-    }
-    .header__button svg {
-        width: 32px;
-        height: 32px;
     }
     .header__button svg:last-child {
         display: none;
@@ -133,7 +128,16 @@
         margin: 0 0 0 5px;
 	}
 
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
+        .header {
+            padding: 5px 0;
+        }
+        .header__button {
+            width: 50px;
+            height: 50px;
+            padding: 9px;
+        }
+
         .logo {
             font-size: 36px;
         }

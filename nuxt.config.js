@@ -22,14 +22,11 @@ export default {
 
 	// Global CSS (https://go.nuxtjs.dev/config-css)
 	css: [
-        { src: '@/assets/app.css' },
-		{ src: 'swiper/swiper-bundle.css' }
+        { src: '@/assets/app.css' }
 	],
 
 	// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-	plugins: [
-		{ src: '~/plugins/VueAwesomeSwiper.js' }
-	],
+	plugins: [],
 
 	// Auto import components (https://go.nuxtjs.dev/config-components)
 	components: true,

@@ -1,13 +1,15 @@
 <template>
     <nav class="menu" :class="{ menu_active: isActive }">
-        <div class="wrap">
-            <ul class="menu__list">
-                <li><a href="/ps5">Playstation 5</a></li>
-                <li><a href="/ps5de">Playstation 5 digital edition</a></li>
-                <li><a href="/ps4">Playstation 4</a></li>
-                <li><a href="/ps4pro">Playstation 4 pro</a></li>
-                <li><a href="/ps4slim">Playstation 4 slim</a></li>
-            </ul>
+        <div class="menu__content">
+            <div class="wrap">
+                <ul class="menu__list">
+                    <li><a href="/ps5">Playstation 5</a></li>
+                    <li><a href="/ps5de">Playstation 5 digital edition</a></li>
+                    <li><a href="/ps4">Playstation 4</a></li>
+                    <li><a href="/ps4pro">Playstation 4 pro</a></li>
+                    <li><a href="/ps4slim">Playstation 4 slim</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 </template>
@@ -33,12 +35,14 @@
         padding: 60px 0 0;
         background: rgba(0,0,0, .4);
     }
+    .menu__content {
+        padding: 20px 0;
+        background: #fff;
+    }
     .menu__list {
         margin: 0;
-        padding: 20px;
-        border-radius: 0 0 10px 10px;
+        padding: 0;
         list-style: none;
-        background: #fff;
     }
 
     .menu_active {

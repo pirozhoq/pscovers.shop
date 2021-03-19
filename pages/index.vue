@@ -1,16 +1,6 @@
 <template>
 	<main class="main">
 		<div class="wrap">
-			<div class="slider">
-				<swiper class="swiper" :options="sliderOption">
-					<swiper-slide>
-						<a class="slider_item" href="#" title="">
-							<img :src="require('@/static/slider/slide1.jpg')" alt="">
-						</a>
-					</swiper-slide>
-					<div class="slider_nav" slot="pagination"></div>
-				</swiper>
-			</div>
 			<div class="new">
 				<div class="new_item">
 					<p class="new_item_title">
@@ -46,12 +36,6 @@
 			</div>
 			<div class="skin">
 				<p class="title">Skins for PS5</p>
-				<swiper class="swiper" :options="swiperOption">
-					<swiper-slide v-for="(item,index) in product_items" :key="index">
-<!--						<ProductItem class="swiper_product_item" :item="item"></ProductItem>-->
-					</swiper-slide>
-					<div class="swiper_pagination" slot="pagination"></div>
-				</swiper>
 			</div>
 			<div class="gear">
 				<p class="title">Accessories for PS5</p>
@@ -66,14 +50,11 @@
 </template>
 
 <script>
-	import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 	import ProductItem from '@/components/ProductItem';
 	import CatalogItem from '@/components/CatalogItem';
 
 	export default {
 		components: {
-			Swiper,
-			SwiperSlide,
             ProductItem,
             CatalogItem
 		},
@@ -89,17 +70,6 @@
 						clickable: true
 					},
 					effect: 'fade'
-				},
-				swiperOption: {
-					slidesPerView: 5,
-					spaceBetween: 15,
-					slidesPerGroup: 5,
-					loop: true,
-					loopFillGroupWithBlank: false,
-					pagination: {
-						el: '.swiper_pagination',
-						clickable: true
-					}
 				},
 				product_items: [
 					{
@@ -135,20 +105,6 @@
 </script>
 
 <style>
-	.slider {
-		margin: 0 0 30px;
-	}
-	.slider_item {
-		display: block;
-		border-radius: 15px;
-		overflow: hidden;
-		background: #ffffff;
-		box-shadow: 0 0 5px 0 #ccc;
-	}
-	.slider_item img {
-		display: block;
-	}
-
 	.new {
 		display: flex;
 		flex-wrap: wrap;
@@ -245,15 +201,6 @@
 
 	.skin {
 		margin: 0 0 40px;
-	}
-
-	.swiper {
-		margin: -5px;
-		padding: 5px;
-	}
-	.swiper_product_item {
-		width: 100%;
-		margin: 0;
 	}
 
     @media (min-width: 768px) {
