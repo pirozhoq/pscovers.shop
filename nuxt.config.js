@@ -28,12 +28,12 @@ export default {
 	components: true,
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-	buildModules: [],
-
-	// Modules (https://go.nuxtjs.dev/config-modules)
-	modules: [
+	buildModules: [
         '@nuxtjs/google-analytics'
     ],
+
+	// Modules (https://go.nuxtjs.dev/config-modules)
+	modules: [],
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
 	build: {},
