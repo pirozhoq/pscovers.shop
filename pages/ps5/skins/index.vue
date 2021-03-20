@@ -4,7 +4,7 @@
 			<div class="wrap">
 				<h1 class="title">Playstation 5 skins</h1>
 				<div class="product_list">
-					<ProductItem v-for="(item,index) in ps5_skins_items" :item="item" :key="index"></ProductItem>
+					<ProductItem v-for="(item,index) in allSkins" :item="item" :key="index"></ProductItem>
 				</div>
 			</div>
 		</main>
@@ -13,22 +13,27 @@
 
 <script>
     import ProductItem from "@/components/ProductItem";
+    import { mapGetters, mapActions } from 'vuex';
 
 	export default {
-		data() {
-			return {
-				ps5_skins_items: []
-			}
-		},
-		async fetch() {
-			await this.$strapi.login({ identifier: 'reader', password: '7iN5L2kXn9Su' });
-			this.ps5_skins_items = await this.$strapi.find('products', { 'category.name': ['en/ps5/skins'] });
-		},
         head() {
             return {
                 title: 'Skins for Playstation 5'
             }
-        }
+        },
+        methods: {
+            ...mapActions({
+                getFromApi: 'skins/getFromApi'
+            })
+        },
+        created() {
+            this.getFromApi()
+        },
+        computed: {
+		    ...mapGetters({
+		        allSkins: 'skins/getSkins'
+            })
+        },
 	}
 </script>
 
