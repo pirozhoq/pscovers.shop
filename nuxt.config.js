@@ -1,12 +1,8 @@
-const strapiBaseUri = 'https://apicovers.xyz';
-
 export default {
 	// Target (https://go.nuxtjs.dev/config-target)
 	target: 'static',
 
-	env: {
-		strapiBaseUri,
-	},
+	env: {},
 	// Global page headers (https://go.nuxtjs.dev/config-head)
 	head: {
 		title: 'pscovers.shop',
@@ -32,20 +28,18 @@ export default {
 	components: true,
 
 	// Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-	buildModules: [
-		// https://go.nuxtjs.dev/eslint
-	],
+	buildModules: [],
 
 	// Modules (https://go.nuxtjs.dev/config-modules)
 	modules: [
-		'@nuxtjs/strapi'
-	],
+        '@nuxtjs/google-analytics'
+    ],
 
 	// Build Configuration (https://go.nuxtjs.dev/config-build)
-	build: {
-	},
+	build: {},
 
-	strapi: {
-		url: strapiBaseUri
-	}
+    googleAnalytics: {
+        id: 'G-4P6HNKCS39',
+        dev: false
+    }
 }
