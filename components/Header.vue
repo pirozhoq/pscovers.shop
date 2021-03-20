@@ -2,22 +2,22 @@
     <div class="head">
         <header class="header">
             <div class="wrap header__wrap">
-                <button :class="['header__button', {'header__button_active': isMenuActive}]" @click="menuShow" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button class="header__button" @click="menuShow" type="button">
+                    <svg v-if="!isMenuActive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg v-if="isMenuActive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
                 <a class="logo header__logo" href="/" title="">
                     <img :src="require(`@/assets/img/logo.svg`)" alt="">PS <span>covers</span>
                 </a>
-                <button :class="['header__button', {'header__button_active': isSearchActive}]" @click="searchShow" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button class="header__button" @click="searchShow" type="button">
+                    <svg v-if="!isSearchActive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg v-if="isSearchActive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
@@ -96,15 +96,6 @@
 	}
     .header__button:hover {
         background: #fafafa;
-    }
-    .header__button svg:last-child {
-        display: none;
-    }
-    .header__button_active svg:first-child {
-        display: none;
-    }
-    .header__button_active svg:last-child {
-        display: block;
     }
 
 	.logo {

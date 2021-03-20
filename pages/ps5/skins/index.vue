@@ -23,7 +23,12 @@
 		async fetch() {
 			await this.$strapi.login({ identifier: 'reader', password: '7iN5L2kXn9Su' });
 			this.ps5_skins_items = await this.$strapi.find('products', { 'category.name': ['en/ps5/skins'] });
-		}
+		},
+        head() {
+            return {
+                title: 'Skins for Playstation 5'
+            }
+        }
 	}
 </script>
 
