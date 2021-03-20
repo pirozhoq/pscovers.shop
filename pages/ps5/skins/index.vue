@@ -3,7 +3,10 @@
 		<main class="main">
 			<div class="wrap">
 				<h1 class="title">Playstation 5 skins</h1>
-				<div class="product_list">
+                <div v-if="loadingStatus" class="product_list">
+                    <ProductItemSkeleton v-for="(item,index) in 4" :item="item" :key="index">{{index}}</ProductItemSkeleton>
+                </div>
+				<div v-else class="product_list">
 					<ProductItem v-for="(item,index) in allSkins" :item="item" :key="index"></ProductItem>
 				</div>
 			</div>
@@ -13,6 +16,7 @@
 
 <script>
     import ProductItem from "@/components/ProductItem";
+    import ProductItemSkeleton from "@/components/ProductItemSkeleton";
     import { mapGetters, mapActions } from 'vuex';
 
 	export default {
@@ -31,7 +35,8 @@
         },
         computed: {
 		    ...mapGetters({
-		        allSkins: 'skins/getSkins'
+                allSkins: 'skins/getSkins',
+                loadingStatus: 'skins/loadingStatus'
             })
         },
 	}
