@@ -11,7 +11,7 @@ export const mutations = {
 export const actions = {
     async getFromApi({ commit }) {
         commit('loadingStatus', true);
-        await fetch('https://apicovers.xyz/products')
+        await fetch('http://apicovers.xyz:1337/products')
             .then(response => response.json())
             .then(data => {
                 commit('loadingStatus', false);

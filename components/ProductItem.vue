@@ -48,7 +48,9 @@
 		height: 15px;
 	}
 	.product_name {
+        height: 54px;
 		margin: 0 0 20px;
+        overflow: hidden;
 		font-size: 13px;
 		font-weight: 500;
 		line-height: 1.4;
@@ -76,6 +78,9 @@
         }
         .product_image {
             height: 200px;
+        }
+        .product_name {
+            height: 36px;
         }
     }
 </style>
